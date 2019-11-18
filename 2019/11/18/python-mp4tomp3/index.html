@@ -51,18 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="&amp;nbsp;you-get这个工具可以下载主流视频网站的所有视频(不包括VIP专享)，且速度较快 Step1： 安装python3环境&amp;nbsp; Step2： 装库1pip install you-get &amp;nbsp; Step3:查看视频相关参数1you-get -i [URL]    #查看视频相关参数 &amp;nbsp; Step4：下载123you-get [URL]   #下载到默认路径yo">
+  <meta name="description" content="1.使用MoviePy库如官方文档所介绍的，moviepy是一个用于视频编辑Python库，可以切割、拼接、标题插入，视频合成（即非线性编辑），进行视频处理和自定义效果的设计。总的来说，可以很方便自由地处理视频、图片等文件。 下载MoviePy库1pip3 install moviepy 最简单的操作(从mp4文件转换为mp3文件)12345from moviepy.editor import *">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python：you-get下载各大视频网站的在线视频">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;pythonyou-get%E4%B8%8B%E8%BD%BD%E5%90%84%E5%A4%A7%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91&#x2F;index.html">
+<meta property="og:title" content="python：从视频中提取音频(使用MoviePy库 or ffmpeg+脚本批量下载)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;18&#x2F;python-mp4tomp3&#x2F;index.html">
 <meta property="og:site_name" content="ZhangYufei&#39;s Blog">
-<meta property="og:description" content="&amp;nbsp;you-get这个工具可以下载主流视频网站的所有视频(不包括VIP专享)，且速度较快 Step1： 安装python3环境&amp;nbsp; Step2： 装库1pip install you-get &amp;nbsp; Step3:查看视频相关参数1you-get -i [URL]    #查看视频相关参数 &amp;nbsp; Step4：下载123you-get [URL]   #下载到默认路径yo">
+<meta property="og:description" content="1.使用MoviePy库如官方文档所介绍的，moviepy是一个用于视频编辑Python库，可以切割、拼接、标题插入，视频合成（即非线性编辑），进行视频处理和自定义效果的设计。总的来说，可以很方便自由地处理视频、图片等文件。 下载MoviePy库1pip3 install moviepy 最简单的操作(从mp4文件转换为mp3文件)12345from moviepy.editor import *">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-17T07:54:48.638Z">
+<meta property="og:updated_time" content="2019-11-18T08:49:07.672Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/13/pythonyou-get%E4%B8%8B%E8%BD%BD%E5%90%84%E5%A4%A7%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91/">
+<link rel="canonical" href="http://yoursite.com/2019/11/18/python-mp4tomp3/">
 
 
 <script id="page-configurations">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>python：you-get下载各大视频网站的在线视频 | ZhangYufei's Blog</title>
+  <title>python：从视频中提取音频(使用MoviePy库 or ffmpeg+脚本批量下载) | ZhangYufei's Blog</title>
   
 
 
@@ -176,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/pythonyou-get%E4%B8%8B%E8%BD%BD%E5%90%84%E5%A4%A7%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/python-mp4tomp3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python：you-get下载各大视频网站的在线视频
+          python：从视频中提取音频(使用MoviePy库 or ffmpeg+脚本批量下载)
         </h1>
 
         <div class="post-meta">
@@ -198,26 +198,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-13 18:02:45" itemprop="dateCreated datePublished" datetime="2019-11-13T18:02:45+08:00">2019-11-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-17 15:54:48" itemprop="dateModified" datetime="2019-11-17T15:54:48+08:00">2019-11-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
+              <time title="创建时间：2019-11-18 15:34:23 / 修改时间：16:49:07" itemprop="dateCreated datePublished" datetime="2019-11-18T15:34:23+08:00">2019-11-18</time>
             </span>
 
           
@@ -233,7 +216,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>301</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -252,14 +235,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&nbsp;<br>you-get这个工具可以下载主流视频网站的所有视频(不包括VIP专享)，且速度较快</p>
-<h4 id="Step1：-安装python3环境"><a href="#Step1：-安装python3环境" class="headerlink" title="Step1： 安装python3环境"></a>Step1： 安装python3环境</h4><p>&nbsp;</p>
-<h4 id="Step2：-装库"><a href="#Step2：-装库" class="headerlink" title="Step2： 装库"></a>Step2： 装库</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install you-get</span><br></pre></td></tr></table></figure>
-<p>&nbsp;</p>
-<h4 id="Step3-查看视频相关参数"><a href="#Step3-查看视频相关参数" class="headerlink" title="Step3:查看视频相关参数"></a>Step3:查看视频相关参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">you-get -i [URL]    #查看视频相关参数</span><br></pre></td></tr></table></figure>
-<p>&nbsp;</p>
-<h4 id="Step4：下载"><a href="#Step4：下载" class="headerlink" title="Step4：下载"></a>Step4：下载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">you-get [URL]   #下载到默认路径</span><br><span class="line">you-get -o C:\Users\think\Downloads [URL]   #根据需要选择存储文件路径方便查找</span><br><span class="line">you-get --format=列表中的一种格式 -o C:\Users\think\Downloads [URL]    #选择特定格式</span><br></pre></td></tr></table></figure>
-<p>&nbsp;</p>
+        <h2 id="1-使用MoviePy库"><a href="#1-使用MoviePy库" class="headerlink" title="1.使用MoviePy库"></a>1.使用MoviePy库</h2><p>如官方文档所介绍的，moviepy是一个用于视频编辑Python库，可以切割、拼接、标题插入，视频合成（即非线性编辑），进行视频处理和自定义效果的设计。总的来说，可以很方便自由地处理视频、图片等文件。</p>
+<h3 id="下载MoviePy库"><a href="#下载MoviePy库" class="headerlink" title="下载MoviePy库"></a>下载MoviePy库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install moviepy</span><br></pre></td></tr></table></figure>
+<h3 id="最简单的操作-从mp4文件转换为mp3文件"><a href="#最简单的操作-从mp4文件转换为mp3文件" class="headerlink" title="最简单的操作(从mp4文件转换为mp3文件)"></a>最简单的操作(从mp4文件转换为mp3文件)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from moviepy.editor import *</span><br><span class="line"></span><br><span class="line">video = VideoFileClip(&apos;test.mp4&apos;)</span><br><span class="line">audio = video.audio</span><br><span class="line">audio.write_audiofile(&apos;test.mp3&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="MoviePy支持的格式"><a href="#MoviePy支持的格式" class="headerlink" title="MoviePy支持的格式"></a>MoviePy支持的格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extensions_dict = &#123; &quot;mp4&quot;:  &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libx264&apos;,&apos;libmpeg4&apos;, &apos;aac&apos;]&#125;,</span><br><span class="line">                    &apos;ogv&apos;:  &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libtheora&apos;]&#125;,</span><br><span class="line">                    &apos;webm&apos;: &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libvpx&apos;]&#125;,</span><br><span class="line">                    &apos;avi&apos;:  &#123;&apos;type&apos;:&apos;video&apos;&#125;,</span><br><span class="line">                    &apos;mov&apos;:  &#123;&apos;type&apos;:&apos;video&apos;&#125;,</span><br><span class="line"></span><br><span class="line">                    &apos;ogg&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libvorbis&apos;]&#125;,</span><br><span class="line">                    &apos;mp3&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libmp3lame&apos;]&#125;,</span><br><span class="line">                    &apos;wav&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;pcm_s16le&apos;, &apos;pcm_s24le&apos;, &apos;pcm_s32le&apos;]&#125;,</span><br><span class="line">                    &apos;m4a&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libfdk_aac&apos;]&#125;</span><br><span class="line">                  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>MoviePy安装简便，上手友好；缺点是支持的格式少，批量操作困难</p>
+<h2 id="2-ffmpeg-脚本批量下载"><a href="#2-ffmpeg-脚本批量下载" class="headerlink" title="2.ffmpeg+脚本批量下载"></a>2.ffmpeg+脚本批量下载</h2><p>ffmpeg是一个高效的跨平台视频和音频处理库，详细介绍和用法请见<a href="https://ffmpeg.org/ffmpeg.html" target="_blank" rel="noopener">官网</a></p>
+<h3 id="下载ffmpeg"><a href="#下载ffmpeg" class="headerlink" title="下载ffmpeg"></a>下载ffmpeg</h3><p>Ubuntu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ffmpeg</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/lanchunhui/article/details/70477042" target="_blank" rel="noopener">Windows下载</a></p>
+<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><p>脚本详情见<a href="https://www.infiniteft.xyz/2018/02/20/extract-audio-from-video-using-python-and-ffmpeg/" target="_blank" rel="noopener">这个网页</a></p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>方便快捷，可以批量操作，但是<del>windows下载ffmpeg不友好</del></p>
+<h2 id="3-其他方法"><a href="#3-其他方法" class="headerlink" title="3.其他方法"></a>3.其他方法</h2><p>dalao说可以放到pr里再保存，<del>对不起我的电脑带不动pr</del></p>
 
     </div>
 
@@ -276,17 +263,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/11/hexo-commands/" rel="next" title="hexo 常用语法（持续更新）">
-                  <i class="fa fa-chevron-left"></i> hexo 常用语法（持续更新）
+                <a href="/2019/11/17/c-stl/" rel="next" title="C++ STL 整理(vector, list, deque)">
+                  <i class="fa fa-chevron-left"></i> C++ STL 整理(vector, list, deque)
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/17/c-stl/" rel="prev" title="C++ STL 整理(vector, list, deque)">
-                  C++ STL 整理(vector, list, deque) <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -325,7 +309,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Step1：-安装python3环境"><span class="nav-number">1.</span> <span class="nav-text">Step1： 安装python3环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step2：-装库"><span class="nav-number">2.</span> <span class="nav-text">Step2： 装库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step3-查看视频相关参数"><span class="nav-number">3.</span> <span class="nav-text">Step3:查看视频相关参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step4：下载"><span class="nav-number">4.</span> <span class="nav-text">Step4：下载</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用MoviePy库"><span class="nav-number">1.</span> <span class="nav-text">1.使用MoviePy库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载MoviePy库"><span class="nav-number">1.1.</span> <span class="nav-text">下载MoviePy库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最简单的操作-从mp4文件转换为mp3文件"><span class="nav-number">1.2.</span> <span class="nav-text">最简单的操作(从mp4文件转换为mp3文件)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MoviePy支持的格式"><span class="nav-number">1.3.</span> <span class="nav-text">MoviePy支持的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ffmpeg-脚本批量下载"><span class="nav-number">2.</span> <span class="nav-text">2.ffmpeg+脚本批量下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载ffmpeg"><span class="nav-number">2.1.</span> <span class="nav-text">下载ffmpeg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行脚本"><span class="nav-number">2.2.</span> <span class="nav-text">运行脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">2.3.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-其他方法"><span class="nav-number">3.</span> <span class="nav-text">3.其他方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

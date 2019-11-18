@@ -40,7 +40,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -172,6 +172,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/python-mp4tomp3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhang Yufei">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhangYufei's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/18/python-mp4tomp3/" class="post-title-link" itemprop="url">python：从视频中提取音频(使用MoviePy库 or ffmpeg+脚本批量下载)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-18 15:34:23 / 修改时间：16:49:07" itemprop="dateCreated datePublished" datetime="2019-11-18T15:34:23+08:00">2019-11-18</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-使用MoviePy库"><a href="#1-使用MoviePy库" class="headerlink" title="1.使用MoviePy库"></a>1.使用MoviePy库</h2><p>如官方文档所介绍的，moviepy是一个用于视频编辑Python库，可以切割、拼接、标题插入，视频合成（即非线性编辑），进行视频处理和自定义效果的设计。总的来说，可以很方便自由地处理视频、图片等文件。</p>
+<h3 id="下载MoviePy库"><a href="#下载MoviePy库" class="headerlink" title="下载MoviePy库"></a>下载MoviePy库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install moviepy</span><br></pre></td></tr></table></figure>
+<h3 id="最简单的操作-从mp4文件转换为mp3文件"><a href="#最简单的操作-从mp4文件转换为mp3文件" class="headerlink" title="最简单的操作(从mp4文件转换为mp3文件)"></a>最简单的操作(从mp4文件转换为mp3文件)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from moviepy.editor import *</span><br><span class="line"></span><br><span class="line">video = VideoFileClip(&apos;test.mp4&apos;)</span><br><span class="line">audio = video.audio</span><br><span class="line">audio.write_audiofile(&apos;test.mp3&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="MoviePy支持的格式"><a href="#MoviePy支持的格式" class="headerlink" title="MoviePy支持的格式"></a>MoviePy支持的格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extensions_dict = &#123; &quot;mp4&quot;:  &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libx264&apos;,&apos;libmpeg4&apos;, &apos;aac&apos;]&#125;,</span><br><span class="line">                    &apos;ogv&apos;:  &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libtheora&apos;]&#125;,</span><br><span class="line">                    &apos;webm&apos;: &#123;&apos;type&apos;:&apos;video&apos;, &apos;codec&apos;:[&apos;libvpx&apos;]&#125;,</span><br><span class="line">                    &apos;avi&apos;:  &#123;&apos;type&apos;:&apos;video&apos;&#125;,</span><br><span class="line">                    &apos;mov&apos;:  &#123;&apos;type&apos;:&apos;video&apos;&#125;,</span><br><span class="line"></span><br><span class="line">                    &apos;ogg&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libvorbis&apos;]&#125;,</span><br><span class="line">                    &apos;mp3&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libmp3lame&apos;]&#125;,</span><br><span class="line">                    &apos;wav&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;pcm_s16le&apos;, &apos;pcm_s24le&apos;, &apos;pcm_s32le&apos;]&#125;,</span><br><span class="line">                    &apos;m4a&apos;:  &#123;&apos;type&apos;:&apos;audio&apos;, &apos;codec&apos;:[&apos;libfdk_aac&apos;]&#125;</span><br><span class="line">                  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>MoviePy安装简便，上手友好；缺点是支持的格式少，批量操作困难</p>
+<h2 id="2-ffmpeg-脚本批量下载"><a href="#2-ffmpeg-脚本批量下载" class="headerlink" title="2.ffmpeg+脚本批量下载"></a>2.ffmpeg+脚本批量下载</h2><p>ffmpeg是一个高效的跨平台视频和音频处理库，详细介绍和用法请见<a href="https://ffmpeg.org/ffmpeg.html" target="_blank" rel="noopener">官网</a></p>
+<h3 id="下载ffmpeg"><a href="#下载ffmpeg" class="headerlink" title="下载ffmpeg"></a>下载ffmpeg</h3><p>Ubuntu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ffmpeg</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/lanchunhui/article/details/70477042" target="_blank" rel="noopener">Windows下载</a></p>
+<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><p>脚本详情见<a href="https://www.infiniteft.xyz/2018/02/20/extract-audio-from-video-using-python-and-ffmpeg/" target="_blank" rel="noopener">这个网页</a></p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>方便快捷，可以批量操作，但是<del>windows下载ffmpeg不友好</del></p>
+<h2 id="3-其他方法"><a href="#3-其他方法" class="headerlink" title="3.其他方法"></a>3.其他方法</h2><p>dalao说可以放到pr里再保存，<del>对不起我的电脑带不动pr</del></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/c-stl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -211,7 +295,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -327,7 +425,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>301</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -410,7 +522,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>417</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -476,7 +602,21 @@
               <time title="创建时间：2019-11-11 19:38:26 / 修改时间：19:39:50" itemprop="dateCreated datePublished" datetime="2019-11-11T19:38:26+08:00">2019-11-11</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>38</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -548,7 +688,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -594,6 +734,16 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Zhang Yufei</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">8k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
